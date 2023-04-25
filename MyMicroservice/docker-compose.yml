@@ -1,0 +1,9 @@
+services:
+  my-microservice:
+    container_name: myuser-microservice
+    image: my-microservice:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
