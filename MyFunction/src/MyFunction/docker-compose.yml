@@ -1,0 +1,6 @@
+services:
+  my-function:
+    container_name: my-function
+    image: my-function:local
+    ports:
+      - "9229:8080"
