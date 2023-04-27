@@ -1,0 +1,21 @@
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  MyFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      ImageUri: my-function:local
+      FunctionName: MyFunction
+      Events:
+        MyApi:
+          Type: Api
+          Properties:
+            Path: /message
+            Method: POST
+            RestApiId: !Ref MyApi
+
+  MyApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: local
